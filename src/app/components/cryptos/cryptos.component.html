@@ -1,0 +1,5 @@
+<app-crypto-item
+  *ngFor="let crypto of cryptos"
+  [crypto]="crypto"
+  (onDeleteCrypto)="deleteCrypto(crypto)"
+></app-crypto-item>

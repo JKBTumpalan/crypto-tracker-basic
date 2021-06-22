@@ -1,0 +1,11 @@
+<div class="crypto">
+  <h3>
+    {{ crypto.symbol }}
+    <fa-icon
+      [ngStyle]="{ color: 'red' }"
+      [icon]="faTimes"
+      (click)="onDelete(crypto)"
+    ></fa-icon>
+  </h3>
+  <p>{{ crypto.text }}</p>
+</div>
