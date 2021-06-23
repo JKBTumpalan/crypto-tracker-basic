@@ -1,5 +1,7 @@
+<app-add-crypto (onAddCrypto)="addCrypto($event)"></app-add-crypto>
 <app-crypto-item
   *ngFor="let crypto of cryptos"
   [crypto]="crypto"
   (onDeleteCrypto)="deleteCrypto(crypto)"
+  (onToggleCrypto)="toggleCrypto(crypto)"
 ></app-crypto-item>

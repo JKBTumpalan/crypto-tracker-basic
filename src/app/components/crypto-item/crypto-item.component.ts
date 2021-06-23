@@ -10,6 +10,7 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 export class CryptoItemComponent implements OnInit {
   @Input() crypto!: Crypto;
   @Output() onDeleteCrypto: EventEmitter<Crypto> = new EventEmitter();
+  @Output() onToggleCrypto: EventEmitter<Crypto> = new EventEmitter();
 
   faTimes = faTimes;
 
@@ -21,5 +22,9 @@ export class CryptoItemComponent implements OnInit {
     console.log('Deleting crypto asset..');
     console.log(crypto);
     this.onDeleteCrypto.emit(crypto);
+  }
+
+  onToggle(crypto: Crypto) {
+    this.onToggleCrypto.emit(crypto);
   }
 }

@@ -3,8 +3,9 @@
     {{ title }}
   </h1>
   <app-button
-    color="green"
-    text="Add"
+    *ngIf="hasRoute('/')"
+    color="{{ showAddCrypto ? 'red' : 'green' }}"
+    text="{{ showAddCrypto ? 'Close' : 'Add' }}"
     (btnClick)="toggleAddCrypto()"
   ></app-button>
 </header>

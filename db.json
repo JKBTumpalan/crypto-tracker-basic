@@ -16,19 +16,19 @@
       "id": 3,
       "text": "Ethereum",
       "symbol": "ETH",
-      "reminder": true
-    },
-    {
-      "id": 4,
-      "text": "Test",
-      "symbol": "ETTH",
-      "reminder": true
+      "reminder": false
     },
     {
       "id": 5,
       "text": "Luna",
       "symbol": "LUNA",
-      "reminder": true
+      "reminder": false
+    },
+    {
+      "text": "Ethereum Classic",
+      "symbol": "ETC",
+      "reminder": false,
+      "id": 6
     }
   ]
 }

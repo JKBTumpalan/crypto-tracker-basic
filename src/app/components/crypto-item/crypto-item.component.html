@@ -1,4 +1,8 @@
-<div class="crypto">
+<div
+  class="crypto"
+  [ngClass]="{ reminder: crypto.reminder }"
+  (dblclick)="onToggle(crypto)"
+>
   <h3>
     {{ crypto.symbol }}
     <fa-icon

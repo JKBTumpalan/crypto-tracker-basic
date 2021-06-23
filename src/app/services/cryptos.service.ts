@@ -3,6 +3,12 @@ import { Crypto } from '../Crypto';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
+const HttpOptions = {
+  headers: new HttpHeaders({
+    'Content-type': 'application/json',
+  }),
+};
+
 @Injectable({
   providedIn: 'root',
 })
@@ -18,5 +24,15 @@ export class CryptosService {
   deleteCryptos(crypto: Crypto): Observable<Crypto> {
     const url = `${this.apiUrl}/${crypto.id}`;
     return this.http.delete<Crypto>(url);
+  }
+
+  toggleCrypto(crypto: Crypto): Observable<Crypto> {
+    const url = `${this.apiUrl}/${crypto.id}`;
+    return this.http.put<Crypto>(url, crypto, HttpOptions);
+  }
+
+  addCrypto(crypto: Crypto): Observable<Crypto> {
+    const url = `${this.apiUrl}/${crypto.id}`;
+    return this.http.post<Crypto>(this.apiUrl, crypto, HttpOptions);
   }
 }

@@ -25,4 +25,16 @@ export class CryptosComponent implements OnInit {
         () => (this.cryptos = this.cryptos.filter((t) => t.id !== crypto.id))
       );
   }
+
+  toggleCrypto(crypto: Crypto) {
+    crypto.reminder = !crypto.reminder;
+
+    this.cryptoService.toggleCrypto(crypto).subscribe();
+  }
+
+  addCrypto(crypto: Crypto) {
+    this.cryptoService
+      .addCrypto(crypto)
+      .subscribe((crypto) => this.cryptos.push(crypto));
+  }
 }
